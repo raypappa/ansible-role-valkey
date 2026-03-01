@@ -1,0 +1,35 @@
+---
+- name: Destroy molecule containers
+  hosts: molecule
+  gather_facts: false
+  tasks:
+    - name: Stop and remove container
+      delegate_to: localhost
+      community.docker.docker_container:
+        name: "{{ inventory_hostname }}"
+        state: absent
+        auto_remove: true
+- name: Remove dynamic molecule inventory
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Remove dynamic inventory file
+      ansible.builtin.file:
+        path: "{{ molecule_ephemeral_directory }}/inventory/molecule_inventory.yml"
+        state: absent
+
+# - name: Destroy container instances
+#   hosts: localhost
+#   gather_facts: false
+#   tasks:
+#     - name: Remove test containers
+#       containers.podman.podman_container:
+#         name: "{{ hostvars[item].ansible_host }}"
+#         state: absent
+#       loop: "{{ groups['all'] }}"
+#       failed_when: false
+#     - name: Remove container network
+#       containers.podman.podman_network:
+#         name: molecule-linux-test
+#         state: absent
+#       failed_when: false

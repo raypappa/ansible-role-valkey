@@ -1,0 +1,17 @@
+- name: bootstrap instances
+  hosts: molecule
+  gather_facts: false
+  tasks:
+    - name: Install sudo
+      ansible.builtin.raw: apt-get update && apt-get install sudo python3 procps -y
+    - name: reset connection
+      ansible.builtin.meta: reset_connection
+
+# - name: Prepare container instances
+#   hosts: molecule
+#   gather_facts: true
+#   become: true
+#   tasks:
+#     - name: dump facts
+#       ansible.builtin.debug:
+#         var: ansible_facts

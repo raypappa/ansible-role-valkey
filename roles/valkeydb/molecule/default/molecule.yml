@@ -1,0 +1,19 @@
+---
+dependency:
+  name: galaxy
+  options:
+    requirements-file: ../requirements.yml
+platforms:
+  - name: molecule-debian13
+    image: debian:13
+# ansible:
+#   executor:
+#     args:
+#       ansible_playbook:
+#         - --inventory=${MOLECULE_SCENARIO_DIRECTORY}/hosts
+scenario:
+  test_sequence:
+    - create
+    - prepare
+    - converge
+    - destroy
