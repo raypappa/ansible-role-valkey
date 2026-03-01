@@ -25,7 +25,7 @@ dependencies:
 description: Ansible role with super high-availability Redis setup
 issues: https://github.com/raypappa/ansible-role-valkey/issues
 license_file: LICENSE
-name: pterodactyl
+name: valkey
 namespace: stoneydavis
 readme: README.md
 repository: https://github.com/raypappa/ansible-role-valkey
