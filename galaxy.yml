@@ -1,0 +1,33 @@
+authors:
+  - Quiq <info@quiq.com>
+  - Sopholos <https://github.com/Sopholos>
+  - raypappa <https://github.com/raypappa>
+build_ignore:
+  - .circleci
+  - .github
+  - .config
+  - .vscode
+  - dist
+  - CODE_OF_CONDUCT.md
+  - CONTRIBUTING.md
+  - .yamllint
+  - '*.tar.gz'
+  - .venv
+  - .tox
+  - .pytest_cache
+  - scripts
+  - .pre-commit-config.yaml
+  - .readthedocs.yaml
+  - pyproject.toml
+  - requirements.txt
+  - '**/requirements.txt'
+dependencies:
+description: Ansible role with super high-availability Redis setup
+issues: https://github.com/raypappa/ansible-role-valkey/issues
+license_file: LICENSE
+name: pterodactyl
+namespace: stoneydavis
+readme: README.md
+repository: https://github.com/raypappa/ansible-role-valkey
+tags:
+version: 1.0.0
